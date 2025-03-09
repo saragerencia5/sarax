@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARAX - Confirmación de Edad</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff007f, #ff416c);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 65, 108, 0.7);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: #ff007f;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #ff416c;
+        }
+    </style>
+    <script>
+        function confirmarEdad() {
+            let edad = prompt("¿Eres mayor de 18 años? (Sí/No)");
+            if (edad.toLowerCase() === "sí" || edad.toLowerCase() === "si") {
+                window.location.href = "pagina_principal.html";  // Redirige a la página principal
+            } else {
+                alert("Debes ser mayor de 18 años para acceder.");
+                window.location.href = "https://www.google.com";  // Redirige a otra página (puedes poner lo que desees)
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            confirmarEdad();  // Llama a la función cuando cargue la página
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenido a SARAX</h2>
+        <p>Por favor, confirma que eres mayor de 18 años para continuar.</p>
+        <button class="btn" onclick="confirmarEdad()">Confirmar Edad</button>
+    </div>
+</body>
+</html>
